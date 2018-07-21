@@ -1,0 +1,27 @@
+
+
+.day {
+  fill: #fff;
+  stroke: #ccc;
+}
+
+.month {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+.RdYlGn .q0-11{fill:#580422}
+.RdYlGn .q1-11{fill:#580422}
+.RdYlGn .q2-11{fill:#580422}
+.RdYlGn .q3-11{fill:#580422}
+.RdYlGn .q4-11{fill:#580422}
+.RdYlGn .q5-11{fill:#580422}
+.RdYlGn .q6-11{fill:#960453}
+.RdYlGn .q7-11{fill:red}
+.RdYlGn .q8-11{fill:#eb5b13}
+.RdYlGn .q9-11{fill:#ffa641}
+.RdYlGn .q10-11{fill:#fbd12a}
+.RdYlGn .q11-11{fill:#6c0}
+
+.RdYlGn .q11{fill:lightgray}
