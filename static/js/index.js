@@ -5,11 +5,6 @@ var map;
 
 var heatDate, traceDate;
 
-function demo(){
-    document.getElementById("toolBox").style.visibility="visible";
-    $("#toolBox").toggle();
-}
-
 //页面初始化执行的内容
 $(function () {
 
@@ -23,18 +18,39 @@ $(function () {
     addMap();
 
     //加载日期时间轴
-    setDateSlider();
+    setDateSlider('heatmap-date-slider','heatmap-date-label');
+    setDateSlider('trailmap-date-slider','trailmap-date-label');
+
+
+    setHourSlider('trailmap-hour-slider','trailmap-hour-label');
+    $("#heatmap").click(function () {
+        $("#toolBox-trailmap").css('display','none');
+        $("#toolBox-heatmap").toggle('fast')
+    });
+
+    $("#spaceAnalysis").click(function () {
+        $("#toolBox-heatmap").css('display','none');
+        $("#toolBox-trailmap").toggle('fast')
+    });
+    /*
+    $("#createHeatMap").click(function () {
+        alert("生成热力图的按钮的操作");
+    });
+
+    $("#searchTrail").click(function () {
+        alert("搜索路劲的按钮的操作");
+    }) */
 
     //监听事件
     //draw block heatmap
-    $("#searchHeatBlock").click(function() {
+    $("#createHeatMapBlock").click(function() {
         console.log(heatDate);
 
     })
 
     //draw street heatmap
-    $("#searchHeatStreet").click(function() {
-        console.log(searchHeatStreet);
+    $("#createHeatMapStreet").click(function() {
+        console.log(heatDate);
         $("#mapContainer").empty();
         var dom = document.getElementById("mapContainer");
         var myChart = echarts.init(dom);
@@ -59,39 +75,70 @@ let addMap=()=>{
 };
 
 //日期时间轴
-let setDateSlider=()=>{
+let setDateSlider=(sliderId, labelId)=>{
     let mindate='2016-01-01';
     let maxdate='2016-06-30';
     let dateLength=getDays(mindate,maxdate);
 
-    let now =new Date(),year=now.getFullYear(),month=now.getMonth()+1,day=now.getDate();
+    let now =new Date(),year=2016,month=3,day=31;
     let thisDay =year+"-"+(month<10?'0'+month:month)+"-"+(day<10?'0'+day:day);
     let today=getDays(mindate,thisDay);
     let length=$("#slider").width();
     let thisValue=today+1;
-    $("#slider").slider({
+    $("#"+sliderId).slider({
         value:thisValue,
         min: 0,
         max: dateLength,
         step: 1,
         create:function(){
-            $("#date-label").css("margin-left",length*(today/dateLength));
-            $("#date-label").text(getAfterDate(mindate,today));
+            //$("#"+labelId).css("margin-left",length*(today/dateLength));
+            $("#"+labelId).text(getAfterDate(mindate,today));
         },
         slide: function( event, ui ) {
-            $("#date-label").css("margin-left",length*(ui.value/dateLength));
-            $("#date-label").text(getAfterDate(mindate,ui.value));
+            //$("#"+labelId).css("margin-left",length*(ui.value/dateLength));
+            $("#"+labelId).text(getAfterDate(mindate,ui.value));
             thisValue=ui.value;
         },
         change: function( event, ui ) {
             //这边定义拖拽日期结束后的事件
-            $("#date-label").css("margin-left",length*(ui.value/dateLength));
-            $("#date-label").text(getAfterDate(mindate,ui.value));
-            console.log(thisValue);
-            heatDate = thisValue;
+            //$("#"+labelId).css("margin-left",length*(ui.value/dateLength));
+            $("#"+labelId).text(getAfterDate(mindate,ui.value));
         }
     });
 };
+
+//小时时间轴
+let setHourSlider=(sliderId,labelId)=>{
+
+    let now =new Date(),hour=now.getHours();
+    let nowtime =(hour<10?'0'+hour:hour);
+
+    let thisValue=hour;
+
+    $("#"+sliderId).slider({
+        value:thisValue,
+        min: 1,
+        max: 24,
+        step: 1,
+        create:function(){
+            //$("#"+labelId).css("margin-left",length*(thisValue/1440));
+            $("#"+labelId).text((nowtime)+':00');
+        },
+        slide: function( event, ui ) {
+            //$("#"+labelId).css("margin-left",length*((ui.value+1)/1440));
+            let hour=Math.floor(ui.value);
+            $("#"+labelId).text((hour<10?'0'+hour:hour)+':00');
+            thisValue=ui.value;
+        },
+        change: function( event, ui ) {
+            //这边定义拖拽日期结束后的事件
+            //$("#"+labelId).css("margin-left",length*((ui.value+1)/1440));
+            let hour=Math.floor(ui.value);
+            $("#"+labelId).text((hour<10?'0'+hour:hour)+':00');
+        }
+    });
+};
+
 /*-------------------------------------------------------计算日期的通用方法部分-----------------------------------------------------------*/
 //获取某个日期之后N天的日期
 function getAfterDate(minDate,days){

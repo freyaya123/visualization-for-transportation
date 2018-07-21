@@ -14,15 +14,11 @@
     <script type="text/javascript" src="../static/js/jquery.ui.js"></script>
 
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-
-
-
-
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
 
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=3gZTpgEdrTGnoVT75w7NVeGudmoSynzI"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
@@ -36,21 +32,38 @@
     <div id="mapContainer"></div>
     <div id="head_ban">
         <ul>
-            <li id="heatmap" title="热力图" style="list-style-type:none;">
-                <img src="../static/img/heatmap.png" onclick="demo()" style="width: 50px;height: 50px;">
+            <li title="热力图" style="list-style-type:none;">
+                <img id="heatmap" src="../static/img/heatmap.png" style="width: 60px;height: 60px;border-radius: 5px;">
             </li>
-            <li id="spaceAnalysis" title="轨迹图" style="list-style-type:none;" >
-                <img src="../static/img/spaceAnalysis.png" style="width: 50px;height: 50px;">
+            <li  title="轨迹图" style="list-style-type:none;" >
+                <img id="spaceAnalysis" src="../static/img/spaceAnalysis.png" style="width: 60px;height: 60px;border-radius: 5px;">
             </li>
         </ul>
     </div>
-    <div id="toolBox">
-        <div id="content">
-            <div id="date-label" style="margin-bottom: 10px;"></div>
-            <div id="slider"></div>
+        <div id="toolBox-heatmap" class="toolBox">
+        <div class="title">热力图</div>
+        <div class="sliderContent">
+            <label>日期：</label>
+            <div id="heatmap-date-label" class="date-label"></div>
+            <div id="heatmap-date-slider" class="date-slider"></div>
         </div>
-        <button id="searchHeatBlock">Block</button>
-        <button id="searchHeatStreet">Street</button>
+        <div id="createHeatMapBlock" class="button-style" style="width: 35%">Block</div>
+        <div id="createHeatMapStreet" class="button-style" style="width: 35%">Street</div>
+
+    </div>
+
+    <div id="toolBox-trailmap" class="toolBox">
+        <div class="title">轨迹图</div>
+        <div class="sliderContent">
+            <label>日期：</label>
+            <div id="trailmap-date-label" class="date-label" ></div>
+            <div id="trailmap-date-slider" class="date-slider"></div>
+
+            <label>时间：</label>
+            <div id="trailmap-hour-label" class="date-label" ></div>
+            <div id="trailmap-hour-slider" class="date-slider"></div>
+        </div>
+        <div class="button-style" id="searchTrail">搜索轨迹</div>
     </div>
 
 
