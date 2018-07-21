@@ -1,10 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" />
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body {
+                margin: 0;
+            }
+            #main {
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
 
-</body>
+
+                <div id="spaceAnalysisInfo" class="spaceAnalysisInfo" style="display: none;">
+                    <div class="spaceAnalysis-header">
+                        <span>时空分析</span>
+                    </div>
+                    <div class="spaceAnalysis-body">
+                        <div>
+                            <span class="boldText">
+                                选择范围
+                            </span>
+                            <span class="icon-polygon toolbar-icon" id="scaSelectByRegion" title="框选"></span>
+                        </div>
+                        <div style="display: none" id="ratePane" class="ratePane">
+                            <div class="boldText">贡献率</div>
+                            <div class="contributionRate">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td>选择</td>
+                                            <td>ID</td>
+                                            <td>类型</td>
+                                            <td>贡献率</td>
+                                            <td>图例</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="rateList">
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="spaceRelation">
+                                <span class="boldText">空间关系</span>
+                                <br>
+                                <span class="spaceRelation-1">
+                                    <span>
+                                        <input name="isAllData" value="1" checked="checked" type="radio">全部历史轨迹
+                                    </span>
+                                    <span id="isAllData_1" style="display: none;">
+                                        <input name="isAllData" value="2" type="radio">当前范围内轨迹
+                                    </span>
+
+                                </span>
+                                <br>
+                                <span class="spaceRelation-2">
+                                    <span>
+                                        <input name="spaceRelation" checked="checked" value="none" type="radio">全部
+                                    </span>
+                                    <span>
+                                        <input name="spaceRelation" value="cross" type="radio">相交
+                                    </span>
+                                    <span>
+                                        <input name="spaceRelation" value="disjoint" type="radio">不相交
+                                    </span>
+                                </span>
+                            </div>
+                            <div id="pathPane" class="pathPane" style="display: none;">
+                                <div class="boldText">轨迹</div>
+                                <div class="slider">
+                                    <input class="single-slider" id="pathSlider" style="display: none;" value="3" type="hidden"><div class="slider-container theme-green" style="width: 280px;">            <div class="back-bar" id="back_bar">                <div class="selected-bar" style="width: 94px; left: 0px;"></div>                <div class="pointer low" style="display: none;"></div><div class="pointer-label" style="display: none;">123456</div>                <div class="pointer high" id="pointer_bar" style="left: 88px;"></div><div class="pointer-label" style="left: 93.3333px;">2017 / 08 / 13</div>                <div class="clickable-dummy"></div>            </div>            <div class="scale"></div>     </div>
+                                </div>
+                                <div class="slider">
+                                    <input class="single-slider" id="pathSlider_hour" style="display: none;" value="9" type="hidden"><div class="slider-container theme-green" style="width: 280px;">           <div class="back-bar" id="back_bar">                <div class="selected-bar" style="width: 110px; left: 0px;"></div>                <div class="pointer low" style="display: none;"></div><div class="pointer-label" style="display: none;">123456</div>                <div class="pointer high" id="pointer_bar" style="left: 104px;"></div><div class="pointer-label" style="left: 109.565px;">09:00</div>                <div class="clickable-dummy"></div>            </div>            <div class="scale"></div>        </div>
+                                </div>
+                            </div>
+                            <div class="btn_list">
+                                <div class="rect-btn" id="clearPath" style="display: none;">
+                                    <a href="#">
+                                        <span>清除</span>
+                                    </a>
+                                    <div class="rect">
+                                        <i class="r1"></i>
+                                        <i class="r2"></i>
+                                        <i class="r3"></i>
+                                        <i class="r4"></i>
+                                    </div>
+                                </div>
+                                <div class="rect-btn" id="pathHeat" style="display: none;">
+                                    <a href="#">
+                                        <span>轨迹热力图</span>
+                                    </a>
+                                    <div class="rect">
+                                        <i class="r1"></i>
+                                        <i class="r2"></i>
+                                        <i class="r3"></i>
+                                        <i class="r4"></i>
+                                    </div>
+                                </div>
+                                <div class="rect-btn" id="queryBtn">
+                                    <a href="#">
+                                        <span>查询轨迹</span>
+                                    </a>
+                                    <div class="rect">
+                                        <i class="r1"></i>
+                                        <i class="r2"></i>
+                                        <i class="r3"></i>
+                                        <i class="r4"></i>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        <div id="main"></div>
+        <script src="../static/js/echarts.js"></script>
+        <script src="../static/js/bmap.js"></script>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=53oVIOgmSIejwV7EfphPgTynOZbIiVYu"></script>
+        <script src="../static/js/example4.js"></script>
+    </body>
 </html>

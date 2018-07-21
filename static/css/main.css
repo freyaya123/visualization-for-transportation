@@ -1,0 +1,496 @@
+html,
+body,
+.map {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	-moz-user-select: none;
+	/*火狐*/
+	-webkit-user-select: none;
+	/*webkit浏览器*/
+	-ms-user-select: none;
+	/*IE10*/
+	-khtml-user-select: none;
+	/*早期浏览器*/
+	user-select: none;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+	width: 4px;
+	height: 16px;
+	background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+.selectByRect_cursor {
+	cursor: url("../img/selectByRect.cur"), url("img/selectByRect.cur"), default !important;
+}
+
+.selectByRegion_cursor {
+	cursor: url("../img/selectByRegion.cur"), url("img/selectByRegion.cur"), default !important;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	font-family: "微软雅黑";
+}
+
+.header {
+	width: 100%;
+	height: 48px;
+	background-color: #000000;
+	z-index: 1000;
+	position: absolute;
+	font-size: 16px;
+}
+
+.header_1 {
+	margin-left: 40px;
+}
+
+.header span {
+	color: #FFFFFF;
+	line-height: 48px;
+}
+
+.header img {
+	vertical-align: text-bottom;
+}
+
+.map img {
+	filter: grayscale(0.9);
+}
+
+.infoPane {
+	position: absolute;
+	z-index: 999;
+	top: 68px;
+	left: 18px;
+}
+
+.head_ban {
+	float: left;
+	width: 60px;
+}
+
+.head_ban ul li+li {
+	margin-top: 10px;
+}
+
+.head_ban img {
+	display: block;
+	width: 45px;
+	height: 45px;
+	border-radius: 3px;
+	box-shadow: 1px 2px 1px rgba(0, 0, 0, .15);
+	cursor: pointer;
+}
+
+.side_ban {
+	float: right;
+	background-color: rgba(36, 36, 36, 0.85);
+	z-index: 1300;
+	padding-bottom: 10px;
+	border-radius: 5px;
+	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.85);
+	overflow: auto;
+}
+
+.heatmapInfo,
+.spaceAnalysisInfo,
+.spaceQueryInfo {
+	width: 305px;
+	display: none;
+	font-size: 16px;
+	padding: 0;
+	padding-bottom: 10px;
+}
+
+.spaceAnalysisInfo {
+	width: 320px;
+}
+
+.heatmap-header {
+	width: 100%;
+	height: 35px;
+	background-color: #242424;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 16px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.heatmap-header span {
+	line-height: 35px;
+}
+
+.heatmap-body {
+	padding: 10px;
+}
+
+.boldText {
+	font-size: 16px;
+	color: #d1d1d1;
+}
+
+.side_ban .slider {
+	margin-top: 30px;
+	padding-left: 10px;
+	padding-bottom: 15px;
+}
+
+.side_ban .slider-container {
+	width: 260px;
+}
+
+.side_ban .slider .back-bar {
+	height: 2px;
+	background-color: #666;
+	background-image: none;
+}
+
+.side_ban .slider .back-bar .selected-bar {
+	background-color: #666;
+	background-image: none
+}
+
+.side_ban .slider .back-bar .pointer {
+	width: 13px;
+	height: 13px;
+	top: -6px;
+	background: #8c8c8c;
+	border: 1px solid #8C8C8C;
+}
+
+.side_ban .slider .back-bar .pointer-label {
+	background: none;
+	color: #FFFFFF;
+	font-size: 16px;
+	top: -25px;
+}
+
+.heatmapItem {
+	margin-bottom: 20px;
+	clear: both;
+}
+
+.heatmap-type {
+	padding: 5px;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.heatmap-type label {
+	padding-top: 5px;
+	display: inline-block;
+	width: 90px;
+	color: #888;
+}
+
+.heatmap-type label span {
+	cursor: pointer;
+}
+
+.selectTag {
+	color: #FFFFFF;
+}
+
+.spaceAnalysis-header {
+	width: 100%;
+	height: 35px;
+	background-color: #242424;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 16px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.spaceAnalysis-body {
+	padding: 10px;
+}
+
+.select-tool {
+	padding-left: 10px;
+}
+
+.toolbar-icon {
+	cursor: pointer;
+	color: #FFFFFF;
+	font-size: 22px;
+	padding-left: 20px;
+}
+
+.ratePane {
+	padding-top: 10px;
+}
+
+.spaceAnalysisInfo-item {
+	margin-bottom: 20px;
+	clear: both;
+}
+
+.contributionRate {
+	max-height: 170px;
+	overflow-y: auto;
+	padding: 10px;
+}
+
+.contributionRate table {
+	width: 100%;
+	margin: 0 auto;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+.contributionRate table tr {
+	height: 35px;
+}
+
+.contributionRate table thead tr {
+	font-size: 16px;
+	color: #FFFFFF;
+}
+
+.contributionRate table tbody tr {
+	font-size: 14px;
+	color: #FFFFFF;
+}
+
+.contributionRate table tbody tr:hover {
+	background-color: #666;
+	cursor: pointer;
+}
+
+.spaceRelation {
+	font-size: 14px;
+	color: #FFFFFF;
+	padding-top: 10px;
+}
+.spaceRelation-1,.spaceRelation-2 {
+	display: inline-block;
+	margin-top: 8px;
+}
+.spaceRelation-1 span{
+	margin-right: 35px;
+}
+.spaceRelation-2 span{
+	margin-right: 40px;
+}
+
+.btn_list {
+	padding-top: 10px;
+	height: 40px;
+}
+
+.rect-btn {
+	display: inline-block;
+	/*width: 100px;*/
+	height: 30px;
+	text-align: center;
+	float: right;
+	position: relative;
+	cursor: pointer;
+	margin-right: 15px;
+	/*margin-left: 15px;*/
+	margin-top: 10px;
+}
+
+.rect-btn a {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #d1d1d1;
+	text-align: center;
+	line-height: 30px;
+	color: #d1d1d1;
+	text-decoration: none;
+	position: relative;
+	cursor: pointer;
+}
+.rect-btn a span{
+	padding: 10px;
+}
+
+.rect-btn a:hover {
+	top: 2px;
+	left: 2px;
+}
+
+.rect-btn .rect {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	right: -8px;
+	bottom: -8px;
+}
+
+.rect-btn .rect .r1 {
+	width: 1px;
+	height: 6px;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	background: #D1D1D1;
+}
+
+.rect-btn .rect .r2 {
+	width: 100%;
+	height: 1px;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	background: #D1D1D1;
+}
+
+.rect-btn .rect .r3 {
+	width: 1px;
+	top: 0;
+	height: 100%;
+	right: 0;
+	position: absolute;
+	background: #D1D1D1;
+}
+
+.rect-btn .rect .r4 {
+	width: 6px;
+	height: 1px;
+	right: 0;
+	top: 0;
+	position: absolute;
+	background: #D1D1D1;
+}
+
+.pathPane {
+	padding-top: 10px;
+}
+
+.queryBtn {
+	float: right;
+	cursor: pointer;
+	width: 80px;
+	height: 28px;
+	position: relative;
+	right: 20px;
+}
+
+.legend {
+	text-align: left;
+	line-height: 18px;
+	color: #555;
+	margin: 10px;
+}
+
+.legend i {
+	width: 65px;
+	height: 10px;
+	float: left;
+	opacity: 0.7;
+}
+
+.legend-num span {
+	display: inline-block;
+	width: 65px;
+	text-align: center;
+	color: #FFFFFF;
+	padding-top: 5px;
+}
+
+.htMax {
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.rate-color {
+	display: inline-block;
+	width: 40px;
+	height: 3px;
+	background: #0078A8;
+}
+.messageInfoContent{
+	margin: 10px;
+}
+.messageInfo-1 span:not(:first-child){
+	font-size: 14px;
+	display: inline-block;
+	margin-top: 5px;
+	margin-left: 15px;
+}
+.messageInfo-1 span:first-child{
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 5px;
+	display: inline-block;
+}
+.pointer{
+	cursor: pointer;
+}
+.serverList-dialog{
+	width: 430px;
+}
+.serverList-body{
+	padding: 10px;
+}
+.serverList{
+	width: 100%;
+	height: 300px;
+	overflow-y:auto ;
+	border: 1px solid #ddd;
+}
+.serverList_modal-btn{
+	padding-top: 20px;
+	padding-bottom: 10px;
+	padding-right: 40px;
+	height: 50px;
+}
+.selected tr,
+.selected td {
+	background-color: rgb(95, 162, 221);
+}
+.serverList_modal-btn .btn{
+    width: 75px;
+    height: 30px;
+    background-color: #777;
+    color: white;
+    border-radius: 0px;
+    line-height: 14px;
+    position: absolute;
+    right: 30px;
+}
+.serverList_modal-btn .btn:first-child{
+	right: 120px;
+}
+.serverList tr td{
+	text-align: center;
+}
+.table>thead>tr>th{
+	text-align: center;
+}
+
