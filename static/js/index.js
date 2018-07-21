@@ -23,23 +23,68 @@ $(function () {
 
 
     setHourSlider('trailmap-hour-slider','trailmap-hour-label');
+
     $("#heatmap").click(function () {
         $("#toolBox-trailmap").css('display','none');
+        $("#toolBox-taximap").css('display','none');
+        $("#toolBox-foremap").css('display','none');
+        $("#toolBox-statsmap").css('display','none');
         $("#toolBox-heatmap").toggle('fast')
     });
 
-    $("#spaceAnalysis").click(function () {
+    $("#tracemap").click(function () {
         $("#toolBox-heatmap").css('display','none');
+        $("#toolBox-taximap").css('display','none');
+        $("#toolBox-foremap").css('display','none');
+        $("#toolBox-statsmap").css('display','none');
+
         $("#toolBox-trailmap").toggle('fast')
     });
-    /*
-    $("#createHeatMap").click(function () {
-        alert("生成热力图的按钮的操作");
+
+    $("#taximap").click(function () {
+        $("#toolBox-heatmap").css('display','none');
+        $("#toolBox-trailmap").css('display','none');
+        $("#toolBox-foremap").css('display','none');
+        $("#toolBox-statsmap").css('display','none');
+
+        $("#toolBox-taximap").toggle('fast')
     });
 
-    $("#searchTrail").click(function () {
-        alert("搜索路劲的按钮的操作");
-    }) */
+    $("#foremap").click(function () {
+        $("#toolBox-heatmap").css('display','none');
+        $("#toolBox-trailmap").css('display','none');
+        $("#toolBox-taximap").css('display','none');
+        $("#toolBox-statsmap").css('display','none');
+        $("#toolBox-foremap").toggle('fast')
+    });
+
+    $("#statsmap").click(function () {
+        $("#toolBox-heatmap").css('display','none');
+        $("#toolBox-trailmap").css('display','none');
+        $("#toolBox-taximap").css('display','none');
+        $("#toolBox-foremap").css('display','none');
+        $("#toolBox-statsmap").toggle('fast')
+    });
+
+    // $("#createHeatMap").click(function () {
+    //     alert("生成热力图的按钮的操作");
+    // });
+    //
+    // $("#creattraceMap").click(function () {
+    //     alert("搜索路劲的按钮的操作");
+    // })
+    //
+    // $("#creattaxiMap").click(function () {
+    //     alert("上下车分析的按钮的操作");
+    // })
+    //
+    // $("#creatforeMap").click(function () {
+    //     alert("预测乘车时间的按钮的操作");
+    // })
+    //
+    // $("#creatstatsMap").click(function () {
+    //     alert("图表可视化的按钮的操作");
+    // })
 
     //监听事件
     //draw block heatmap
@@ -66,9 +111,8 @@ $(function () {
         console.log(trailDate);
         console.log(trailHour);
 
-        if (option && typeof option === "object") {
-            myChart.setOption(option, true);
-        }
+        getTrail(trailDate, trailHour);
+        
     })
 });
 
@@ -90,7 +134,7 @@ let setDateSlider=(sliderId, labelId)=>{
     let maxdate='2016-06-30';
     let dateLength=getDays(mindate,maxdate);
 
-    let now =new Date(),year=2016,month=3,day=31;
+    let now =new Date(),year=2016,month=3,day=1;
     let thisDay =year+"-"+(month<10?'0'+month:month)+"-"+(day<10?'0'+day:day);
     let today=getDays(mindate,thisDay);
     let length=$("#slider").width();
@@ -126,15 +170,15 @@ let setDateSlider=(sliderId, labelId)=>{
 //小时时间轴
 let setHourSlider=(sliderId,labelId)=>{
 
-    let now =new Date(),hour=now.getHours();
+    let now =new Date(),hour=0;
     let nowtime =(hour<10?'0'+hour:hour);
 
     let thisValue=hour;
 
     $("#"+sliderId).slider({
         value:thisValue,
-        min: 1,
-        max: 24,
+        min: 0,
+        max: 23,
         step: 1,
         create:function(){
             //$("#"+labelId).css("margin-left",length*(thisValue/1440));

@@ -20,8 +20,8 @@ body,html{
 #head_ban {
     position: absolute;
     z-index: 999;
-    top:5px;
-    left:10px;
+    top:25px;
+    left:0px;
     z-index: 10000;
 }
 
@@ -47,7 +47,8 @@ body,html{
     font-size:15px;
     border-radius: 20px;
     background-color: #0d6690;
-    color: white
+    color: white;
+    cursor: pointer;
 }
 /*.buttonBackground{
     position: relative;
@@ -59,7 +60,10 @@ body,html{
     height:40px;
 }*/
 
-
+.button-icon:hover{
+    cursor: pointer
+}
+/*
 #heatmap:hover{
     cursor: pointer;
 }
@@ -76,7 +80,7 @@ body,html{
 #searchTrail:hover{
     cursor: pointer;
 }
-
+*/
 .title{
     border-top-left-radius:5px;
     border-top-right-radius:5px;
@@ -89,7 +93,7 @@ body,html{
 
 .toolBox{
     position: absolute;
-    top:20px;
+    top:40px;
     left:120px;
     width:20%;
     height:auto;

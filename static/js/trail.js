@@ -4,9 +4,9 @@ var app = {};
 option = null;
 app.title = 'line';
 
-function getTrail(day, hour)
+function getTrail(day, hour=0)
 {
-  filepath="../static/data/taxi"+hour+".json";
+  filepath="../static/data/trail/"+hour+".json";
   $.getJSON(filepath, function(data) {
     var routesdata = [];
     for (var i = 0; i < data.data.length; i += 1) {
@@ -194,7 +194,13 @@ function getTrail(day, hour)
             zlevel: 1
         }]
     };
-    return option;
+
+    $("#mapContainer").empty();
+    var dom = document.getElementById("mapContainer");
+    var myChart = echarts.init(dom);
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
 });
 }
 
