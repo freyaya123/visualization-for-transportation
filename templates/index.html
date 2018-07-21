@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>展示</title>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/date-slider.css">
+	
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=3gZTpgEdrTGnoVT75w7NVeGudmoSynzI"></script>
+
+</head>
+<body>
+    <div class="head_ban">
+        <ul>
+            <li id="heatmap" title="热力图" style="list-style-type:none;">
+                <img src="img/heatmap.png" onclick="demo()">
+            </li>
+             <li id="spaceAnalysis" title="轨迹图" style="list-style-type:none;">
+                 <img src="img/spaceAnalysis.png">
+             </li>
+        </ul>
+    </div>
+
+    <div id="toolBox">
+        <div id="content">
+            <div id="date-label" style="margin-bottom: 10px;"></div>
+            <div id="slider"></div>
+        </div>
+        <button id="searchTrail">生成热力图</button>
+    </div>
+
+    <!--地图容器-->
+    <div id="mapContainer"></div>
+
+</body>
+</html>
