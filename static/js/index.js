@@ -3,7 +3,7 @@
 //将map定义为全局变量，以便各个方法对其进行调用
 var map;
 
-var heatDate, traceDate;
+var heatDate, trailDate, trailHour;
 
 //页面初始化执行的内容
 $(function () {
@@ -60,6 +60,16 @@ $(function () {
         };
 
     })
+
+    //draw trail
+    $("#createTrail").click(function() {
+        console.log(trailDate);
+        console.log(trailHour);
+
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    })
 });
 
 //设置地图容器高度
@@ -103,6 +113,12 @@ let setDateSlider=(sliderId, labelId)=>{
             //这边定义拖拽日期结束后的事件
             //$("#"+labelId).css("margin-left",length*(ui.value/dateLength));
             $("#"+labelId).text(getAfterDate(mindate,ui.value));
+            if(sliderId=="heatmap-date-slider") {
+                heatDate = thisValue;
+            }
+            else if(sliderId=="trailmap-date-slider") {
+                trailDate = thisValue;
+            }
         }
     });
 };
@@ -135,6 +151,7 @@ let setHourSlider=(sliderId,labelId)=>{
             //$("#"+labelId).css("margin-left",length*((ui.value+1)/1440));
             let hour=Math.floor(ui.value);
             $("#"+labelId).text((hour<10?'0'+hour:hour)+':00');
+            trailHour = thisValue;
         }
     });
 };

@@ -4,7 +4,10 @@ var app = {};
 option = null;
 app.title = 'line';
 
-$.getJSON('../static/data/taxi1.json', function(data) {
+function getTrail(day, hour)
+{
+  filepath="../static/data/taxi"+hour+".json";
+  $.getJSON(filepath, function(data) {
     var routesdata = [];
     for (var i = 0; i < data.data.length; i += 1) {
         routesdata.push(data.data[i].routes);
@@ -27,7 +30,7 @@ $.getJSON('../static/data/taxi1.json', function(data) {
         }
     }));
     console.log(lines);
-    myChart.setOption(option = {
+    option = {
         bmap: {
             center: [-73.97, 40.75],
             zoom: 14,
@@ -190,8 +193,8 @@ $.getJSON('../static/data/taxi1.json', function(data) {
             },
             zlevel: 1
         }]
-    });
-});;
-if (option && typeof option === "object") {
-    myChart.setOption(option, true);
+    };
+    return option;
+});
 }
+
