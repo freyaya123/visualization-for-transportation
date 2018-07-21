@@ -35,6 +35,13 @@ $(function () {
     //draw street heatmap
     $("#searchHeatStreet").click(function() {
         console.log(searchHeatStreet);
+        $("#mapContainer").empty();
+        var dom = document.getElementById("mapContainer");
+        var myChart = echarts.init(dom);
+
+        if (heat_road_option && typeof heat_road_option === "object") {
+            myChart.setOption(heat_road_option, true);
+        };
 
     })
 });

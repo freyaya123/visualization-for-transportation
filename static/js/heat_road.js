@@ -1,5 +1,4 @@
-var dom = document.getElementById("container");
-var myChart = echarts.init(dom);
+
 var app = {};
 option = null;
 app.title = '热力图与百度地图扩展';
@@ -44,8 +43,8 @@ $.getJSON('../static/data/2016_3_1_9_10_915-945.json', function (data) {
     console.log(all_position.length);
     console.log(all_value);
 
-    myChart.setOption(
-        option = {
+
+        heat_road_option = {
             baseOption:{
                 animation: false,
                 timeline: {
@@ -101,14 +100,10 @@ $.getJSON('../static/data/2016_3_1_9_10_915-945.json', function (data) {
                 }
 
             ],
-        });
-    if (!app.inNode) {
-        // 添加百度地图插件
-        var bmap = myChart.getModel().getComponent('bmap').getBMap();
-        bmap.addControl(new BMap.MapTypeControl());
-    }
+        }
+
 });
-;
-if (option && typeof option === "object") {
+
+/*if (option && typeof option === "object") {
     myChart.setOption(option, true);
-}
+}*/
