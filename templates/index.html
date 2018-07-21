@@ -6,39 +6,40 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <title>展示</title>
 
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="css/date-slider.css">
-	
-	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="js/jquery.ui.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/date-slider.css">
+    
+    <script type="text/javascript" src="../static/js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.ui.js"></script>
+    <script type="text/javascript" src="../static/js/index.js"></script>
 
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=3gZTpgEdrTGnoVT75w7NVeGudmoSynzI"></script>
 
 </head>
 <body>
-    <div class="head_ban">
+<!--地图容器-->
+    <div id="mapContainer"></div>
+    <div id="head_ban">
         <ul>
             <li id="heatmap" title="热力图" style="list-style-type:none;">
-                <img src="img/heatmap.png" onclick="demo()">
+                <img src="../static/img/heatmap.png" onclick="demo()" style="width: 50px;height: 50px;">
             </li>
-             <li id="spaceAnalysis" title="轨迹图" style="list-style-type:none;">
-                 <img src="img/spaceAnalysis.png">
-             </li>
+            <li id="spaceAnalysis" title="轨迹图" style="list-style-type:none;" >
+                <img src="../static/img/spaceAnalysis.png" style="width: 50px;height: 50px;">
+            </li>
         </ul>
     </div>
-
     <div id="toolBox">
         <div id="content">
             <div id="date-label" style="margin-bottom: 10px;"></div>
             <div id="slider"></div>
         </div>
-        <button id="searchTrail">生成热力图</button>
+        <button id="searchHeatBlock">Block</button>
+        <button id="searchHeatStreet">Street</button>
     </div>
 
-    <!--地图容器-->
-    <div id="mapContainer"></div>
+
 
 </body>
 </html>

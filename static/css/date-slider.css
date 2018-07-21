@@ -1,0 +1,32 @@
+/*
+1.create by gjj 2018-06-21
+2.content元素是最外层包含日期信息、slider、canvas的div
+3.slider的margin设了50是date-Label的一半，是为了在日期拖到最走侧和最右侧的时候还能完整显示
+*/
+#content{
+    width:100%;
+    color:white;
+}
+#slider{
+    margin:0 15px 40px 15px;
+    background-color: #0d6690;
+}
+#date-label{
+    font-size:12px;
+    margin-bottom: 10px;
+
+}
+/*重新定义拖拽按钮*/
+.ui-slider .ui-slider-handle {
+    width: 18px;
+    height: 31px;
+    background: #DDDDDD url(../img/dateSilderArr.png) no-repeat;
+    margin-top: -5px;
+    cursor: pointer;
+    background-size:100% 100%;
+}
+/*拖拽轨迹的高度*/
+.ui-slider-horizontal {
+    height: 7px;
+    border:0;
+}
