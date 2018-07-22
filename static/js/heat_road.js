@@ -178,7 +178,7 @@ function getHeatMap() {
         }*/
 
         console.log(option);
-
+        $("#inputWrite").empty();
         if (option && typeof option === "object") {
             myChart.setOption(option, true);
         }

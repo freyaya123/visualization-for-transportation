@@ -332,6 +332,7 @@ function getHeatBlock() {
             ],
             };
             console.log(option);
+        $("#inputWrite").empty();
         if (option && typeof option === "object") {
             myChart.setOption(option, true);
         };

@@ -4,7 +4,32 @@ function getPredictMap() {
 pick = [-73.990318,40.745730]
     drop = [-73.977579,40.769363]
 
-    oDiv = document.createElement('div');
+    thisdiv=document.getElementById('inputWrite');
+    thisdiv.innerHTML="<div class=\"layui-form\" style=\"margin-left: 100px;\">\n" +
+        "          <input type=\"datetime-local\" value=\"2015-09-24T13:59:59\"/>\n" +
+        "       </div>\n"+
+        "<form action=\"\" method=\"get\" style=\"margin-left: 100px;\">\n" +
+        "  <label >上车经度：</label>\n" +
+        "  <input id=\"onlon\" name=\"lon\" type=\"text\" value=\"-73.9903\">\n" +
+        "  <lable >上车纬度：</lable>\n" +
+        "  <input id=\"onlat\" name=\"lat\" type=\"text\" value=\"40.7457\">\n" +
+        "  <br>\n" +
+        "  <label>下车经度：</label>\n" +
+        "  <input id=\"offlon\" name=\"lon\" type=\"text\" value=\"-73.9776\">\n" +
+        "  <lable >下车纬度：</lable>\n" +
+        "  <input id=\"offlat\" name=\"lat\" type=\"text\" value=\"40.7694\">\n" +
+        "\n" +
+        "  <input type=\"button\" value=\"地图上找\" onClick=\"ShowOnMap(document.getElementById('onlon').value,document.getElementById('onlat').value,document.getElementById('offlon').value,document.getElementById('offlat').value);\" />\n" +
+        "  <lable >预测时间：</lable>\n" +
+        "  <input id=\"predicttime\" name=\"timep\" type=\"text\">\n" +
+        "\n" +
+        "\n" +
+        "\n" +
+        //"  经纬度：\n" +
+        //"  <input id=\"lonlat\" name=\"lonlat\" type=\"text\">\n" +
+        "</form>";
+    console.log($("#inputWrite"));
+    /*oDiv = document.createElement('div');
     pDiv=document.createElement('div');
     pDiv.innerHTML="<div class=\"layui-form\" style=\"margin-left: 100px;\">\n" +
         "          <input type=\"datetime-local\" value=\"2015-09-24T13:59:59\"/>\n" +
@@ -33,7 +58,7 @@ pick = [-73.990318,40.745730]
     var listall=document.body;
     listall.insertBefore(oDiv,listall.childNodes[0]);
     listall=document.body;
-    listall.insertBefore(pDiv,listall.childNodes[0]);
+    listall.insertBefore(pDiv,listall.childNodes[0]);*/
 
 
 

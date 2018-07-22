@@ -192,6 +192,8 @@ function getTrail(day, hour=0)
     };
 
     $("#mapContainer").empty();
+    $("#inputWrite").empty();
+    console.log($("#inputWrite"));
     var dom = document.getElementById("mapContainer");
     var mytrailChart = echarts.init(dom);
     console.log(trailoption);

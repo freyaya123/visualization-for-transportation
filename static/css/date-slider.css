@@ -32,4 +32,5 @@
 .ui-slider-horizontal {
     height: 3px;
     border:0;
+    right: 3px;
 }

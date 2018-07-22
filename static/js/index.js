@@ -27,6 +27,7 @@ $(function () {
     setHourSlider('gridmap-hour-slider','gridmap-hour-label');
 
     $("#heatmap").click(function () {
+        //$("#inputWrite").css('display','none');
         $("#toolBox-trailmap").css('display','none');
         $("#toolBox-taximap").css('display','none');
         $("#toolBox-foremap").css('display','none');
@@ -42,6 +43,7 @@ $(function () {
     });
 
     $("#tracemap").click(function () {
+        //$("#inputWrite").css('display','none');
         $("#toolBox-heatmap").css('display','none');
         $("#toolBox-taximap").css('display','none');
         $("#toolBox-foremap").css('display','none');
@@ -57,6 +59,7 @@ $(function () {
     });
 
     $("#taximap").click(function () {
+        //$("#inputWrite").css('display','none');
         $("#toolBox-heatmap").css('display','none');
         $("#toolBox-trailmap").css('display','none');
         $("#toolBox-foremap").css('display','none');
@@ -72,6 +75,7 @@ $(function () {
     });
 
     $("#foremap").click(function () {
+        $("#inputWrite").css('display','block');
         $("#toolBox-heatmap").css('display','none');
         $("#toolBox-trailmap").css('display','none');
         $("#toolBox-taximap").css('display','none');
@@ -87,6 +91,7 @@ $(function () {
     });
 
     $("#statsmap").click(function () {
+        //$("#inputWrite").css('display','none');
         $("#toolBox-heatmap").css('display','none');
         $("#toolBox-trailmap").css('display','none');
         $("#toolBox-taximap").css('display','none');
@@ -102,6 +107,7 @@ $(function () {
     });
 
     $("#gridmap").click(function () {
+        //$("#inputWrite").css('display','none');
         $("#toolBox-heatmap").css('display','none');
         $("#toolBox-trailmap").css('display','none');
         $("#toolBox-taximap").css('display','none');
@@ -119,6 +125,7 @@ $(function () {
     //监听事件
     //draw block heatmap
     $("#createHeatMapBlock").click(function() {
+        $("#inputWrite").css('display','none');
         console.log(heatDate);
         //TODO
         getHeatBlock();
@@ -126,6 +133,7 @@ $(function () {
 
     //draw street heatmap
     $("#createHeatMapStreet").click(function() {
+        $("#inputWrite").css('display','none');
         console.log(heatDate);
         /*$("#mapContainer").empty();
         var dom = document.getElementById("mapContainer");
@@ -140,6 +148,7 @@ $(function () {
 
     //draw trail
     $("#createTrail").click(function() {
+        $("#inputWrite").css('display','none');
         console.log(trailDate);
         console.log(trailHour);
 
@@ -149,6 +158,7 @@ $(function () {
 
     //show pick up location
     $('#createPickUpMap').click(function() {
+
         console.log(scatterDate);
         //TODO
     })
@@ -178,11 +188,12 @@ $(function () {
     $('#createStatsMap1').click(function() {
         $("#statsMap2").css('display','none');
         $("#statsMap1").toggle('fast');
+        $("#inputWrite").css('display','none');
     })
 
     $('#createStatsMap2').click(function() {
         $("#statsMap1").css('display','none');
-
+        $("#inputWrite").css('display','none');
         //getLineBar();
         $("#statsMap2").toggle('fast');
     })

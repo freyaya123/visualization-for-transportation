@@ -167,6 +167,7 @@ function getGrid(hour=12) {
         }
     };
     $("#mapContainer").empty();
+    $("#inputWrite").empty();
         var dom = document.getElementById("mapContainer");
         var myChart = echarts.init(dom);
         if (option && typeof option === "object") {
