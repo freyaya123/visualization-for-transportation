@@ -80,8 +80,8 @@ def predict_duration(yy, mm, dd, hh, pick, drop):
     bst = pickle.load(open("xg_real_pre.dat", "rb"))
     preds = bst.predict(test)
     # print(preds)
-    #return preds[0], routes
-    return json.dumps([preds[0], routes])
+    return preds[0], routes
+    #return json.dumps([preds[0], routes])
 
 
 def get_test_data():

@@ -36,7 +36,9 @@ $(function () {
         $("#statsMap1").css('display','none');
         $("#statsMap2").css('display','none');
 
-        $("#toolBox-heatmap").toggle('fast')
+        $("#toolBox-heatmap").toggle('fast');
+        $("#statsMap1").css('display','none');
+        $("#statsMap2").css('display','none');
     });
 
     $("#tracemap").click(function () {
@@ -49,7 +51,9 @@ $(function () {
         $("#statsMap1").css('display','none');
         $("#statsMap2").css('display','none');
 
-        $("#toolBox-trailmap").toggle('fast')
+        $("#toolBox-trailmap").toggle('fast');
+        $("#statsMap1").css('display','none');
+        $("#statsMap2").css('display','none');
     });
 
     $("#taximap").click(function () {
@@ -62,7 +66,9 @@ $(function () {
         $("#statsMap1").css('display','none');
         $("#statsMap2").css('display','none');
 
-        $("#toolBox-taximap").toggle('fast')
+        $("#toolBox-taximap").toggle('fast');
+        $("#statsMap1").css('display','none');
+        $("#statsMap2").css('display','none');
     });
 
     $("#foremap").click(function () {
@@ -75,7 +81,9 @@ $(function () {
         $("#statsMap1").css('display','none');
         $("#statsMap2").css('display','none');
 
-        $("#toolBox-foremap").toggle('fast')
+        $("#toolBox-foremap").toggle('fast');
+        $("#statsMap1").css('display','none');
+        $("#statsMap2").css('display','none');
     });
 
     $("#statsmap").click(function () {
@@ -88,7 +96,9 @@ $(function () {
         $("#statsMap1").css('display','none');
         $("#statsMap2").css('display','none');
 
-        $("#toolBox-statsmap").toggle('fast')
+        $("#toolBox-statsmap").toggle('fast');
+        $("#statsMap1").css('display','none');
+        $("#statsMap2").css('display','none');
     });
 
     $("#gridmap").click(function () {
@@ -101,7 +111,9 @@ $(function () {
         $("#statsMap1").css('display','none');
         $("#statsMap2").css('display','none');
         
-        $("#toolBox-gridmap").toggle('fast')
+        $("#toolBox-gridmap").toggle('fast');
+        $("#statsMap1").css('display','none');
+        $("#statsMap2").css('display','none');
     });
 
     //监听事件
@@ -355,7 +367,10 @@ $(function () {
     $("#createForeMap").click(function() {
 
         //TODO
+        $("#toolBox-foremap").css('display','none');
         getPredictMap();
+
+        //$("#predicttime").setAttribute('value',928.47614);
     })
 
 });
