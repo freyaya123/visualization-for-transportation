@@ -1,21 +1,24 @@
 var map;
 function getPredictMap() {
 
-
+pick = [-73.990318,40.745730]
+    drop = [-73.977579,40.769363]
 
     oDiv = document.createElement('div');
     oDiv.innerHTML = "<form action=\"\" method=\"get\">\n" +
         "  <label >上车经度：</label>\n" +
-        "  <input id=\"onlon\" name=\"lon\" type=\"text\" >\n" +
+        "  <input id=\"onlon\" name=\"lon\" type=\"text\" value=\"-73.9903\">\n" +
         "  <lable >上车纬度：</lable>\n" +
-        "  <input id=\"onlat\" name=\"lat\" type=\"text\">\n" +
+        "  <input id=\"onlat\" name=\"lat\" type=\"text\" value=\"40.7457\">\n" +
         "  <br>\n" +
         "  <label>下车经度：</label>\n" +
-        "  <input id=\"offlon\" name=\"lon\" type=\"text\" >\n" +
+        "  <input id=\"offlon\" name=\"lon\" type=\"text\" value=\"-73.9776\">\n" +
         "  <lable >下车纬度：</lable>\n" +
-        "  <input id=\"offlat\" name=\"lat\" type=\"text\">\n" +
+        "  <input id=\"offlat\" name=\"lat\" type=\"text\" value=\"40.7694\">\n" +
         "\n" +
         "  <input type=\"button\" value=\"地图上找\" onClick=\"ShowOnMap(document.getElementById('onlon').value,document.getElementById('onlat').value,document.getElementById('offlon').value,document.getElementById('offlat').value);\" />\n" +
+        "  <lable >预测时间：</lable>\n" +
+        "  <input id=\"predicttime\" name=\"timep\" type=\"text\">\n" +
         "\n" +
         "\n" +
         "\n" +
@@ -96,8 +99,18 @@ function ShowOnMap(onlon, onlat, offlon, offlat) {
         var pointoff = new BMap.Point(offlon, offlat);
         addMarker(pointon);
         addMarker(pointoff);
-        //drawRoutes(pointon, pointoff)
+        drawRoutes(pointon, pointoff);
 }
 
+
+function drawRoutes(ps,pe){
+    var polyline = new BMap.Polyline([
+            ps,//起始点的经纬度
+            pe//终点的经纬度
+        ], {strokeColor:"green",//设置颜色
+            strokeWeight:4, //宽度
+            strokeOpacity:1});//透明度
+        map.addOverlay(polyline);
+}
 
 
