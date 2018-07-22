@@ -150,6 +150,13 @@ $(function () {
         $("#statsMap2").toggle('fast');
     })
 
+    //for Prediction
+    $("#createForeMap").click(function() {
+
+        //TODO
+        getPredictMap();
+    })
+
 });
 
 //设置地图容器高度
