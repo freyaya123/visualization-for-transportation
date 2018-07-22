@@ -5,7 +5,11 @@ pick = [-73.990318,40.745730]
     drop = [-73.977579,40.769363]
 
     oDiv = document.createElement('div');
-    oDiv.innerHTML = "<form action=\"\" method=\"get\">\n" +
+    pDiv=document.createElement('div');
+    pDiv.innerHTML="<div class=\"layui-form\" style=\"margin-left: 100px;\">\n" +
+        "          <input type=\"datetime-local\" value=\"2015-09-24T13:59:59\"/>\n" +
+        "       </div>";
+    oDiv.innerHTML = "<form action=\"\" method=\"get\" style=\"margin-left: 100px;\">\n" +
         "  <label >上车经度：</label>\n" +
         "  <input id=\"onlon\" name=\"lon\" type=\"text\" value=\"-73.9903\">\n" +
         "  <lable >上车纬度：</lable>\n" +
@@ -26,8 +30,10 @@ pick = [-73.990318,40.745730]
         //"  <input id=\"lonlat\" name=\"lonlat\" type=\"text\">\n" +
         "</form>";
 
-    var listall=document.body
+    var listall=document.body;
     listall.insertBefore(oDiv,listall.childNodes[0]);
+    listall=document.body;
+    listall.insertBefore(pDiv,listall.childNodes[0]);
 
 
 
