@@ -45,8 +45,8 @@ body,html{
     height:40px;
     line-height:40px;
     font-size:15px;
-    border-radius: 20px;
-    background-color: #0d6690;
+    border-radius: 10px;
+    background-color: #8ba4d8;
     color: white;
     cursor: pointer;
 }
@@ -82,13 +82,13 @@ body,html{
 }
 */
 .title{
-    border-top-left-radius:5px;
-    border-top-right-radius:5px;
     height:40px;
     line-height: 40px;
     text-align: center;
     background-color: #3a3a3a;
     color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .toolBox{
@@ -101,8 +101,40 @@ body,html{
     background-color: rgba(0, 0, 0, 0.61);
     color: white;
     z-index: 999;
-    border-radius: 5px;
+    border-radius: 10px;
     display: none;
+}
+
+.statMapTitle{
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #bbd2d6;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.statsMapBox{
+    position: absolute;
+    top: 0px;
+    left: 340px;
+    width: 60%;
+    height: 50%;
+    background-color: #dae1e49c;
+    color: white;
+    z-index: 999;
+    border-radius: 15px;
+    margin-top: 40px;
+    margin-right: 100px;
+    margin-left: 100px;
+    display: none;
+}
+
+.title-label{
+    font-size: 16px;
+    color: #d1d1d1;
+    margin-top: 15px;
+    margin-left: 15px;
 }
 
 

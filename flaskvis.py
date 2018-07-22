@@ -1,7 +1,7 @@
 from flask import Flask,render_template, request
 import sys
 sys.path.append('main')
-import predict
+#import predict
 
 app = Flask(__name__)
 
@@ -10,7 +10,7 @@ app = Flask(__name__)
 def hello_world():
     #return render_template('heat_road_bmap.html')
     
-    if request.mothod == 'POST':
+    if request.method == 'POST':
         datetime = request.form.get('datetime')
         pickUpLoc = request.form.get('pickuploc')
         dropOffLoc = request.form.get('dropOffLoc')

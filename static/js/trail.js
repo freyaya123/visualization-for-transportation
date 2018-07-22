@@ -1,5 +1,3 @@
-
-
 function getTrail(day, hour=0)
 {
   filepath="../static/data/trail/"+hour+".json";
