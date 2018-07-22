@@ -225,6 +225,7 @@ $(function () {
         $("#statsMap2").toggle('fast');
     })
 
+<<<<<<< HEAD
             var domChart2 = document.getElementById("statsChart2");
         var statChart2_ = echarts.init(domChart2);
         var chart2option = {
@@ -299,6 +300,14 @@ $(function () {
         if (chart2option && typeof chart2option === "object") {
             statChart2_.setOption(chart2option, true);
         }
+=======
+    //for Prediction
+    $("#createForeMap").click(function() {
+
+        //TODO
+        getPredictMap();
+    })
+>>>>>>> 5386efcb3d70f47d71892bad9f17739b984b0fae
 
 });
 
