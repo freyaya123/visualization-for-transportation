@@ -19,7 +19,7 @@ function getHeatMap() {
 
         return res;
     };
-    $.getJSON('../static/data/2016_3_1_9_10_915-945.json', function (data) {
+    $.getJSON('../static/data/2016-3-1_0-24.json', function (data) {
         //var data = eval("("+data+")");
         /*var points = [].concat.apply([], data.map(function (track) {
             return track.map(function (seg) {
@@ -29,6 +29,7 @@ function getHeatMap() {
         console.log(points);*/
 
         for (var i = 0; i < data.data.length; i += 1) {
+            console.log(data.data.length);
             var tmp_position = new Array;
             var tmp_value = new Array;
             console.log(data.data[i].time);
@@ -52,7 +53,7 @@ function getHeatMap() {
                 animation: false,
                 timeline: {
                     autoPlay: true,
-                    data: ["9:15", "9:45"],
+                    data: ["6:00","7:00","8:00","9:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00"],
                     axisType: 'category',
                     padding: [5, 5, 5, 5],
                     playInterval: 1500,
@@ -60,7 +61,7 @@ function getHeatMap() {
                     label: {
                         normal: {
                             textStyle: {
-                                color: 'white',
+                                color: 'black',
                                 fontSize: 13
                             }
                         }
@@ -99,6 +100,71 @@ function getHeatMap() {
                 {
                     series: [{
                         data: convertData(1)
+                    }]
+                },
+                {
+                    series: [{
+                        data: convertData(2)
+                    }]
+                },
+                {
+                    series: [{
+                        data: convertData(3)
+                    }]
+                },
+                {
+                    series: [{
+                        data: convertData(4)
+                    }]
+                },
+                {
+                    series: [{
+                        data: convertData(5)
+                    }]
+                },
+                {
+                    series: [{
+                        data: convertData(6)
+                    }]
+                },
+                {
+                    series: [{
+                        data: convertData(7)
+                    }]
+                },
+                {
+                    series: [{
+                        data: convertData(8)
+                    }]
+                },
+                {
+                    series: [{
+                        data: convertData(9)
+                    }]
+                },
+                {
+                    series: [{
+                        data: convertData(10)
+                    }]
+                },
+                {
+                    series: [{
+                        data: convertData(11)
+                    }]
+                },
+                {
+                    series: [{
+                        data: convertData(12)
+                    }]
+                },
+                {
+                    series: [{
+                        data: convertData(13)
+                    }]
+                },
+                {
+                    series: [{
+                        data: convertData(14)
                     }]
                 }
 
