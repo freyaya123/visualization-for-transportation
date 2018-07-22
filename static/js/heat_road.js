@@ -29,12 +29,12 @@ function getHeatMap() {
         console.log(points);*/
 
         for (var i = 0; i < data.data.length; i += 1) {
-            var tmp_position=new Array;
-            var tmp_value=new Array;
+            var tmp_position = new Array;
+            var tmp_value = new Array;
             console.log(data.data[i].time);
             console.log(data.data[i].positions);
 
-            for (var j=0;j<data.data[i].positions.length;j++){
+            for (var j = 0; j < data.data[i].positions.length; j++) {
                 tmp_position.push(data.data[i].positions[j]);
                 tmp_value.push(1);
             }
@@ -46,72 +46,76 @@ function getHeatMap() {
         console.log(all_position.length);
         console.log(all_value);
 
-        myChart.setOption(
-            option = {
-                baseOption:{
-                    animation: false,
-                    timeline: {
-                        autoPlay:true,
-                        data: ["9:15","9:45"],
-                        axisType: 'category',
-                        padding: [5,5,5,5],
-                        playInterval:1500,
-                        lineStyle:{color:'white'},
-                        label:{
-                            normal:{
-                                textStyle:{
-                                    color: 'white',
-                                    fontSize: 13
-                                }
+        //myChart.setOption(
+        option = {
+            baseOption: {
+                animation: false,
+                timeline: {
+                    autoPlay: true,
+                    data: ["9:15", "9:45"],
+                    axisType: 'category',
+                    padding: [5, 5, 5, 5],
+                    playInterval: 1500,
+                    lineStyle: {color: 'white'},
+                    label: {
+                        normal: {
+                            textStyle: {
+                                color: 'white',
+                                fontSize: 13
                             }
                         }
-                    },
-                    bmap: {
-                        center: [-73.97,40.75],
-                        zoom: 13,
-                        roam: true
-                    },
-                    visualMap: {
-                        show: false,
-                        top: 'top',
-                        min: 0,
-                        max: 5,
-                        seriesIndex: 0,
-                        calculable: true,
-                        inRange: {
-                            color: ['blue', 'blue', 'green', 'yellow', 'red']
-                        }
-                    },
-                    series: [{
-                        type: 'heatmap',
-                        coordinateSystem: 'bmap',
+                    }
+                },
+                bmap: {
+                    center: [-73.97, 40.75],
+                    zoom: 13,
+                    roam: true
+                },
+                visualMap: {
+                    show: false,
+                    top: 'top',
+                    min: 0,
+                    max: 5,
+                    seriesIndex: 0,
+                    calculable: true,
+                    inRange: {
+                        color: ['blue', 'blue', 'green', 'yellow', 'red']
+                    }
+                },
+                series: [{
+                    type: 'heatmap',
+                    coordinateSystem: 'bmap',
 
-                        pointSize: 5,
-                        blurSize: 6
+                    pointSize: 5,
+                    blurSize: 6
+                }]
+            },
+            options: [
+                {
+                    series: [{
+                        data: convertData(0)
                     }]
                 },
-                options: [
-                    {
-                        series:[{
-                            data : convertData(0)
-                        }]
-                    },
-                    {
-                        series:[{
-                            data : convertData(1)
-                        }]
-                    }
+                {
+                    series: [{
+                        data: convertData(1)
+                    }]
+                }
 
-                ],
-            });
-        if (!app.inNode) {
+            ],
+        }
+        //);
+        /*if (!app.inNode) {
             // 添加百度地图插件
             var bmap = myChart.getModel().getComponent('bmap').getBMap();
             bmap.addControl(new BMap.MapTypeControl());
+        }*/
+
+        console.log(option);
+
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
         }
     });
-    ;
-    if (option && typeof option === "object") {
-        myChart.setOption(option, true);
-    }
+
 }

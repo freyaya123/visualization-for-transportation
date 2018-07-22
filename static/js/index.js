@@ -92,6 +92,7 @@ $(function () {
     $("#createHeatMapBlock").click(function() {
         console.log(heatDate);
         //TODO
+        getHeatBlock();
     })
 
     //draw street heatmap
