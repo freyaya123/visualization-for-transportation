@@ -132,6 +132,10 @@ $(function () {
     //show prediction result
     $('#createForeMap').click(function() {
         //TODO
+        datetime = '2016-03-30 21:00';
+        pick = [-73.990318,40.745730]
+        drop = [-73.977579,40.769363]
+        //$.ajax
     })
 
     //show charts without map
