@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+        <form action="" method="get">
+  <label >上车经度：</label>
+  <input id="onlon" name="lon" type="text" >
+  <lable >上车纬度：</lable>
+  <input id="onlat" name="lat" type="text">
+            <label>下车经度：</label>
+  <input id="offlon" name="lon" type="text" >
+  <lable >下车纬度：</lable>
+  <input id="offlat" name="lat" type="text">
+
+  <input type="button" value="地图上找" onClick="ShowOnMap(document.getElementById('onlon').value,document.getElementById('onlat').value,document.getElementById('offlon').value,document.getElementById('offlat').value);" />
+
+
+
+  经纬度：
+  <input id="lonlat" name="lonlat" type="text">
+</form>
+       <div id="mapContainer" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/jquery/jquery.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript" src="../static/js/interaction.js">
+
+       </script>
+   </body>
+</html>
