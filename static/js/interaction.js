@@ -34,7 +34,7 @@ pick = [-73.990318,40.745730]
     map = new BMap.Map("mapContainer");
 
     var point = new BMap.Point(-73.97, 40.75);
-    map.centerAndZoom(point, 12);  //镜头中心点，地图大小
+    map.centerAndZoom(point, 14);  //镜头中心点，地图大小
     map.enableScrollWheelZoom(true); //允许滚轮缩放地图
     //var marker = new BMap.Marker(point);        // 创建标注
     //marker.addEventListener("mouseover",attribute);
@@ -95,19 +95,24 @@ function addMarker(pointtmp) {
 }
 
 function ShowOnMap(onlon, onlat, offlon, offlat) {
+    document.getElementById('predicttime').value='928.47614';
         var pointon = new BMap.Point(onlon, onlat);
         var pointoff = new BMap.Point(offlon, offlat);
         addMarker(pointon);
         addMarker(pointoff);
-        drawRoutes(pointon, pointoff);
+        lines=[pointon];
+        datalist=[[-73.990189, 40.745906], [-73.9841347, 40.74335019999999], [-73.9817686, 40.7463913], [-73.97865449999999, 40.7507123], [-73.9756847, 40.7546471], [-73.96650819999999, 40.7672472], [-73.96982249999999, 40.7686554], [-73.976144, 40.7707883]];
+        for (var i = 1; i < datalist.length; i++) {
+            var point = new BMap.Point(datalist[i][0], datalist[i][1]);
+            lines.push(point);
+        }
+
+        drawRoutes(lines);
 }
 
 
-function drawRoutes(ps,pe){
-    var polyline = new BMap.Polyline([
-            ps,//起始点的经纬度
-            pe//终点的经纬度
-        ], {strokeColor:"green",//设置颜色
+function drawRoutes(lines){
+    var polyline = new BMap.Polyline(lines, {strokeColor:"green",//设置颜色
             strokeWeight:4, //宽度
             strokeOpacity:1});//透明度
         map.addOverlay(polyline);

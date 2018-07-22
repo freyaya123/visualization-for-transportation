@@ -241,7 +241,10 @@ $(function () {
     $("#createForeMap").click(function() {
 
         //TODO
+        $("#toolBox-foremap").css('display','none');
         getPredictMap();
+
+        //$("#predicttime").setAttribute('value',928.47614);
     })
 
 });
