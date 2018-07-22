@@ -3,7 +3,7 @@
 //将map定义为全局变量，以便各个方法对其进行调用
 var map;
 
-var heatDate, trailDate, trailHour;
+var heatDate, trailDate, trailHour, scatterDate;
 
 //页面初始化执行的内容
 $(function () {
@@ -20,6 +20,7 @@ $(function () {
     //加载日期时间轴
     setDateSlider('heatmap-date-slider','heatmap-date-label');
     setDateSlider('trailmap-date-slider','trailmap-date-label');
+    setDateSlider('scatter-date-slider','scatter-date-label');
 
 
     setHourSlider('trailmap-hour-slider','trailmap-hour-label');
@@ -90,7 +91,7 @@ $(function () {
     //draw block heatmap
     $("#createHeatMapBlock").click(function() {
         console.log(heatDate);
-
+        //TODO
     })
 
     //draw street heatmap
@@ -114,6 +115,29 @@ $(function () {
         getTrail(trailDate, trailHour);
         
     })
+
+    //show pick up location
+    $('#createPickUpMap').click(function() {
+        console.log(scatterDate);
+        //TODO
+    })
+
+    //show drop off location
+    $('#createDropOffMap').click(function() {
+        console.log(scatterDate);
+        //TODO
+    })
+
+    //show prediction result
+    $('#createForeMap').click(function() {
+        //TODO
+    })
+
+    //show charts without map
+    $('#createStatsMap').click(function() {
+        //TODO
+    })
+
 });
 
 //设置地图容器高度
@@ -162,6 +186,9 @@ let setDateSlider=(sliderId, labelId)=>{
             }
             else if(sliderId=="trailmap-date-slider") {
                 trailDate = thisValue;
+            }
+            else if(sliderId=="scatter-date-slider") {
+                scatterDate = thisValue;
             }
         }
     });

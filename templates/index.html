@@ -33,27 +33,27 @@
     <div id="mapContainer"></div>
     <div id="head_ban">
         <ul>
-            <li title="热力图" style="list-style-type:none;">
+            <li title="HeatMap" style="list-style-type:none;">
                 <img id="heatmap" class="button-icon" src="../static/img/heatmap.png" style="width: 60px;height: 60px;border-radius: 5px;">
             </li>
-            <li title="轨迹图" style="list-style-type:none;" >
+            <li title="Trail" style="list-style-type:none;" >
                 <img id="tracemap" class="button-icon" src="../static/img/tracemap.png" style="width: 60px;height: 60px;border-radius: 5px;">
             </li>
-            <li title="上下图" style="list-style-type:none;" >
+            <li title="Location" style="list-style-type:none;" >
                 <img id="taximap" class="button-icon" src="../static/img/taxi.png" style="width: 60px;height: 60px;border-radius: 5px;">
             </li>
-            <li title="预测图" style="list-style-type:none;" >
+            <li title="Prediction" style="list-style-type:none;" >
                 <img id="foremap" class="button-icon" src="../static/img/fore.png" style="width: 60px;height: 60px;border-radius: 5px;">
             </li>
-            <li title="图表图" style="list-style-type:none;" >
+            <li title="Charts" style="list-style-type:none;" >
                 <img id="statsmap" class="button-icon" src="../static/img/stats.png" style="width: 60px;height: 60px;border-radius: 5px;">
             </li>
         </ul>
     </div>
         <div id="toolBox-heatmap" class="toolBox">
-        <div class="title">热力图</div>
+        <div class="title">HeatMap</div>
         <div class="sliderContent">
-            <label>日期：</label>
+            <label>Date: </label>
             <div id="heatmap-date-label" class="date-label"></div>
             <div id="heatmap-date-slider" class="date-slider"></div>
         </div>
@@ -63,13 +63,13 @@
     </div>
 
 <div id="toolBox-trailmap" class="toolBox">
-    <div class="title">轨迹图</div>
+    <div class="title">Trail</div>
     <div class="sliderContent">
-        <label>日期：</label>
+        <label>Date: </label>
         <div id="trailmap-date-label" class="date-label" ></div>
         <div id="trailmap-date-slider" class="date-slider"></div>
 
-        <label>时间：</label>
+        <label>Time: </label>
         <div id="trailmap-hour-label" class="date-label" ></div>
         <div id="trailmap-hour-slider" class="date-slider"></div>
     </div>
@@ -77,33 +77,34 @@
 </div>
 
 <div id="toolBox-taximap" class="toolBox">
-    <div class="title">上车下车图</div>
-    <!--<div class="sliderContent">-->
-    <!--<label>日期：</label>-->
-    <!--<div id="heatmap-date-label" class="date-label"></div>-->
-    <!--<div id="heatmap-date-slider" class="date-slider"></div>-->
-    <!--</div>-->
-    <div id="createtaxiMap" class="button-style">生成</div>
+    <div class="title">Location</div>
+    <div class="sliderContent">
+    <label>Date: </label>
+    <div id="scatter-date-label" class="date-label"></div>
+    <div id="scatter-date-slider" class="date-slider"></div>
+    </div>
+    <div id="createPickUpMap" class="button-style">Pick Up</div>
+    <div id="createDropOffMap" class="button-style">Drop Off</div>
 </div>
 
 <div id="toolBox-foremap" class="toolBox">
-    <div class="title">预测图</div>
+    <div class="title">Prediction</div>
     <!--<div class="sliderContent">-->
     <!--<label>日期：</label>-->
     <!--<div id="heatmap-date-label" class="date-label"></div>-->
     <!--<div id="heatmap-date-slider" class="date-slider"></div>-->
     <!--</div>-->
-    <div id="createforeMap" class="button-style">生成</div>
+    <div id="createForeMap" class="button-style">Predict</div>
 </div>
 
 <div id="toolBox-statsmap" class="toolBox">
-    <div class="title">统计图</div>
+    <div class="title">Charts</div>
     <!--<div class="sliderContent">-->
     <!--<label>日期：</label>-->
     <!--<div id="heatmap-date-label" class="date-label"></div>-->
     <!--<div id="heatmap-date-slider" class="date-slider"></div>-->
     <!--</div>-->
-    <div id="createstatsMap" class="button-style">生成</div>
+    <div id="createStatsMap" class="button-style">Show</div>
 </div>
 
 
