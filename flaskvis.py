@@ -1,7 +1,7 @@
 from flask import Flask,render_template, request
 import sys
 sys.path.append('main')
-#import predict
+from main import predict
 
 app = Flask(__name__)
 
