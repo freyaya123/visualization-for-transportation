@@ -50,6 +50,9 @@
             <li title="Charts" style="list-style-type:none;" >
                 <img id="statsmap" class="button-icon" src="../static/img/stats.png" style="width: 60px;height: 60px;border-radius: 5px;">
             </li>
+            <li title="Grids" style="list-style-type:none;" >
+                <img id="gridmap" class="button-icon" src="../static/img/grid.png" style="width: 60px;height: 60px;border-radius: 5px;   border: 1px solid #c5c5c5;">
+            </li>
         </ul>
     </div>
     
@@ -72,7 +75,7 @@
             <div id="trailmap-date-label" class="date-label" ></div>
             <div id="trailmap-date-slider" class="date-slider"></div>
 
-            <label>Time: </label>
+            <label>Hour: </label>
             <div id="trailmap-hour-label" class="date-label" ></div>
             <div id="trailmap-hour-slider" class="date-slider"></div>
         </div>
@@ -108,7 +111,25 @@
         <!--<div id="heatmap-date-label" class="date-label"></div>-->
         <!--<div id="heatmap-date-slider" class="date-slider"></div>-->
         <!--</div>-->
-        <div id="createStatsMap" class="button-style">Show</div>
+        <div id="createStatsMap1" class="button-style">Chart1</div>
+        <div id="createStatsMap2" class="button-style">Chart2</div>
+    </div>
+
+    <div id="toolBox-gridmap" class="toolBox">
+        <div class="title">GridMap</div>
+        <div class="sliderContent">
+            <label class="title-label">Hour: </label>
+            <div id="gridmap-hour-label" class="date-label"></div>
+            <div id="gridmap-hour-slider" class="date-slider"></div>
+        </div>
+        <div class="button-style" id="createGridMap">Grid</div>
+    </div>    
+
+    <div id="statsMap1" class="statsMapBox">
+        <div class="statMapTitle">statsMap1</div>
+    </div>
+    <div id="statsMap2" class="statsMapBox">
+        <div class="statMapTitle">statsMap2</div>
     </div>
 
 

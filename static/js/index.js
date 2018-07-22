@@ -3,7 +3,7 @@
 //将map定义为全局变量，以便各个方法对其进行调用
 var map;
 
-var heatDate, trailDate, trailHour, scatterDate;
+var heatDate, trailDate, trailHour, scatterDate, gridHour;
 
 //页面初始化执行的内容
 $(function () {
@@ -24,12 +24,14 @@ $(function () {
 
 
     setHourSlider('trailmap-hour-slider','trailmap-hour-label');
+    setHourSlider('gridmap-hour-slider','gridmap-hour-label');
 
-    $("#heatmap").click(function () {
+        $("#heatmap").click(function () {
         $("#toolBox-trailmap").css('display','none');
         $("#toolBox-taximap").css('display','none');
         $("#toolBox-foremap").css('display','none');
         $("#toolBox-statsmap").css('display','none');
+        $("#toolBox-gridmap").css('display','none');
         $("#toolBox-heatmap").toggle('fast')
     });
 
@@ -38,7 +40,7 @@ $(function () {
         $("#toolBox-taximap").css('display','none');
         $("#toolBox-foremap").css('display','none');
         $("#toolBox-statsmap").css('display','none');
-
+        $("#toolBox-gridmap").css('display','none');
         $("#toolBox-trailmap").toggle('fast')
     });
 
@@ -47,7 +49,7 @@ $(function () {
         $("#toolBox-trailmap").css('display','none');
         $("#toolBox-foremap").css('display','none');
         $("#toolBox-statsmap").css('display','none');
-
+        $("#toolBox-gridmap").css('display','none');
         $("#toolBox-taximap").toggle('fast')
     });
 
@@ -56,6 +58,7 @@ $(function () {
         $("#toolBox-trailmap").css('display','none');
         $("#toolBox-taximap").css('display','none');
         $("#toolBox-statsmap").css('display','none');
+        $("#toolBox-gridmap").css('display','none');
         $("#toolBox-foremap").toggle('fast')
     });
 
@@ -64,28 +67,18 @@ $(function () {
         $("#toolBox-trailmap").css('display','none');
         $("#toolBox-taximap").css('display','none');
         $("#toolBox-foremap").css('display','none');
+        $("#toolBox-gridmap").css('display','none');
         $("#toolBox-statsmap").toggle('fast')
     });
 
-    // $("#createHeatMap").click(function () {
-    //     alert("生成热力图的按钮的操作");
-    // });
-    //
-    // $("#creattraceMap").click(function () {
-    //     alert("搜索路劲的按钮的操作");
-    // })
-    //
-    // $("#creattaxiMap").click(function () {
-    //     alert("上下车分析的按钮的操作");
-    // })
-    //
-    // $("#creatforeMap").click(function () {
-    //     alert("预测乘车时间的按钮的操作");
-    // })
-    //
-    // $("#creatstatsMap").click(function () {
-    //     alert("图表可视化的按钮的操作");
-    // })
+    $("#gridmap").click(function () {
+        $("#toolBox-heatmap").css('display','none');
+        $("#toolBox-trailmap").css('display','none');
+        $("#toolBox-taximap").css('display','none');
+        $("#toolBox-foremap").css('display','none');
+        $("#toolBox-statsmap").css('display','none');
+        $("#toolBox-gridmap").toggle('fast')
+    });
 
     //监听事件
     //draw block heatmap
@@ -139,11 +132,22 @@ $(function () {
         //$.ajax
     })
 
+    $('#createGridMap').click(function() {
+        
+        getGrid(gridHour);
+    })
+
     //show charts without map
-    $('#createStatsMap').click(function() {
-        //TODO
-        console.log("charts");
-        getGrid();
+    
+
+    $('#createStatsMap1').click(function() {
+        $("#statsMap2").css('display','none');
+        $("#statsMap1").toggle('fast');
+    })
+
+    $('#createStatsMap2').click(function() {
+        $("#statsMap1").css('display','none');
+        $("#statsMap2").toggle('fast');
     })
 
 });
@@ -230,7 +234,10 @@ let setHourSlider=(sliderId,labelId)=>{
             //$("#"+labelId).css("margin-left",length*((ui.value+1)/1440));
             let hour=Math.floor(ui.value);
             $("#"+labelId).text((hour<10?'0'+hour:hour)+':00');
-            trailHour = thisValue;
+            if(sliderId=="trailmap-hour-slider")
+                trailHour = thisValue;
+            else if(sliderId=="gridmap-hour-slider")
+                gridHour = thisValue;
         }
     });
 };
