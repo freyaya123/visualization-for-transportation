@@ -1,8 +1,4 @@
-var dom = document.getElementById("container");
-var myChart = echarts.init(dom);
-var app = {};
-option = null;
-app.title = 'line';
+
 
 function getTrail(day, hour=0)
 {

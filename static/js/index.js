@@ -97,13 +97,14 @@ $(function () {
     //draw street heatmap
     $("#createHeatMapStreet").click(function() {
         console.log(heatDate);
-        $("#mapContainer").empty();
+        /*$("#mapContainer").empty();
         var dom = document.getElementById("mapContainer");
         var myChart = echarts.init(dom);
 
         if (heat_road_option && typeof heat_road_option === "object") {
             myChart.setOption(heat_road_option, true);
-        };
+        };*/
+        getHeatMap();
 
     })
 
