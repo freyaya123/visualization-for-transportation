@@ -141,6 +141,8 @@ $(function () {
     //show charts without map
     $('#createStatsMap').click(function() {
         //TODO
+        console.log("charts");
+        getGrid();
     })
 
 });
