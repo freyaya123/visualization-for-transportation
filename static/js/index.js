@@ -26,7 +26,7 @@ $(function () {
     setHourSlider('trailmap-hour-slider','trailmap-hour-label');
     setHourSlider('gridmap-hour-slider','gridmap-hour-label');
 
-        $("#heatmap").click(function () {
+    $("#heatmap").click(function () {
         $("#toolBox-trailmap").css('display','none');
         $("#toolBox-taximap").css('display','none');
         $("#toolBox-foremap").css('display','none');
@@ -152,6 +152,9 @@ $(function () {
         $("#statsMap2").toggle('fast');
     })
 
+
+    //show line-bar
+    {
         var domChart2 = document.getElementById("statsChart2");
         var statChart2_ = echarts.init(domChart2);
         var chart2option = {
@@ -226,6 +229,13 @@ $(function () {
         if (chart2option && typeof chart2option === "object") {
             statChart2_.setOption(chart2option, true);
         }
+    }
+
+    //show calender
+    {
+        
+    }
+
 
     //for Prediction
     $("#createForeMap").click(function() {
