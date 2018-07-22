@@ -16,6 +16,7 @@ function getTrail(day, hour=0)
             if(line[i])
               points.push([line[i], line[i + 1]]);
         }
+
         return {
             coords: points,
             lineStyle: {
@@ -26,7 +27,7 @@ function getTrail(day, hour=0)
         }
     }));
     console.log(lines);
-    option = {
+    trailoption = {
         bmap: {
             center: [-73.97, 40.75],
             zoom: 14,
@@ -155,6 +156,7 @@ function getTrail(day, hour=0)
               ]
             }
         },
+
         series: [{
             type: 'lines',
             coordinateSystem: 'bmap',
@@ -193,9 +195,10 @@ function getTrail(day, hour=0)
 
     $("#mapContainer").empty();
     var dom = document.getElementById("mapContainer");
-    var myChart = echarts.init(dom);
-    if (option && typeof option === "object") {
-        myChart.setOption(option, true);
+    var mytrailChart = echarts.init(dom);
+    console.log(trailoption);
+    if (trailoption && typeof trailoption === "object") {
+        mytrailChart.setOption(trailoption, true);
     }
 });
 }
